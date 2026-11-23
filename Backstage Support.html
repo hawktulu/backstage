@@ -1,0 +1,68 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Backstage Support</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one narrow tour-laminate column; amber stage accents like the game itself */
+:root {
+  --bg: #f6f2ea; --panel: #fffdf8; --fg: #1d1722; --muted: #5d5366; --line: #e2d9cb; --accent: #b0630b;
+  --display: 'Big Shoulders Display', Impact, 'Arial Narrow', sans-serif;
+  --body: 'Work Sans', system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #15111b; --panel: #1f1927; --fg: #f3ebde; --muted: #a99eb6; --line: #3a3046; --accent: #ffb53d; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg: #15111b; --panel: #1f1927; --fg: #f3ebde; --muted: #a99eb6; --line: #3a3046; --accent: #ffb53d; color-scheme: dark; }
+body { background: var(--bg); color: var(--fg); font: 16px/1.55 var(--body); }
+main { max-width: 640px; margin: 0 auto; padding-block: 40px 56px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; flex-direction: column; gap: 28px; }
+.eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0; }
+h1 { font-family: var(--display); font-weight: 900; text-transform: uppercase; font-size: clamp(44px, 12vw, 72px); line-height: .9; margin: 6px 0 0; text-wrap: balance; }
+h2 { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: 26px; letter-spacing: .02em; margin: 0 0 8px; }
+p { margin: 0; max-width: 62ch; }
+.lede { color: var(--muted); margin-top: 12px; }
+.contact { background: var(--panel); border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 8px; padding: 18px; display: flex; flex-direction: column; gap: 10px; }
+.mail { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.mail code { font: 600 17px/1.3 var(--body); user-select: all; overflow-wrap: anywhere; }
+.mail a { color: var(--accent); font-weight: 600; }
+button { font: inherit; font-size: 14px; padding: 6px 12px; border-radius: 6px; border: 1px solid var(--line); background: transparent; color: var(--fg); cursor: pointer; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.small { font-size: 14px; color: var(--muted); }
+dl { margin: 0; display: flex; flex-direction: column; gap: 16px; }
+dt { font-weight: 600; }
+dd { margin: 4px 0 0; color: var(--muted); }
+footer { border-top: 1px dashed var(--line); padding-top: 16px; font-size: 14px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 18px; }
+footer a { color: var(--accent); }
+</style>
+<main>
+  <header>
+    <p class="eyebrow">Backstage: Band Manager</p>
+    <h1>Support</h1>
+    <p class="lede">Questions, bugs or ideas? Write to me. I’m the one person who makes the game, and I read every message.</p>
+  </header>
+
+  <section class="contact" aria-labelledby="c">
+    <h2 id="c">Contact</h2>
+    <div class="mail"><code id="addr">lukas.lancz@icloud.com</code><button type="button" id="copy">Copy address</button></div>
+    <p class="small">Tell me your iPhone model and the game version (Business tab → About). A screenshot helps a lot. I usually answer within a few days.</p>
+  </section>
+
+  <section aria-labelledby="f">
+    <h2 id="f">Common questions</h2>
+    <dl>
+      <div><dt>How do I unlock the full game?</dt><dd>The first in-game year is free. To keep playing, open the Business tab and tap Full game → Unlock now. It’s a single payment with no ads and no subscriptions.</dd></div>
+      <div><dt>I bought the game but it asks me to pay again.</dt><dd>Open the Business tab → Full game → Restore purchase, signed in with the same Apple ID you bought it with. Nothing is charged again.</dd></div>
+      <div><dt>Where are my saves? Can I move a career to another phone?</dt><dd>Saves stay on your phone. To move a career, open the Business tab, tap Show save code, copy it, and paste it on the other phone under New career → Restore a career.</dd></div>
+      <div><dt>Will I lose my careers if I delete the app?</dt><dd>Yes, deleting the app deletes its saves. Copy a save code first if you want to keep a career.</dd></div>
+      <div><dt>Something looks wrong or the game got stuck.</dt><dd>Close the game fully and open it again. The game saves every week. If it keeps happening, email me what you did just before it happened.</dd></div>
+    </dl>
+  </section>
+
+  <footer><span>Made by Lukáš Lancz</span><span>Version 1.0</span><a id="privacy" href="https://claude.ai/artifact/6o7kpXXVb9PyH9ar3BHP1a">Privacy policy</a></footer>
+</main>
+<script>
+document.getElementById('copy').addEventListener('click', function () {
+  var b = this, t = document.getElementById('addr').textContent;
+  var done = function (ok) { b.textContent = ok ? 'Copied' : 'Select and copy'; setTimeout(function () { b.textContent = 'Copy address'; }, 1800); };
+  try { navigator.clipboard.writeText(t).then(function () { done(true); }, function () { var r = document.createRange(); r.selectNodeContents(document.getElementById('addr')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); done(false); }); } catch (e) { done(false); }
+});
+</script>
+
+</body></html>
